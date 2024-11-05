@@ -13,8 +13,10 @@ function getPrice(price) {
 }
 
 function checkData() {
-//	let csheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
-//	csheet.getRange("C4").setValue("test");
+	if((new Date()).getMinutes()==15) {
+		let csheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+		csheet.getRange("C4").setValue("test");
+	}
   //var ui = SpreadsheetApp.getUi();
   let d = new Date();
   const month1 = d.getMonth();
