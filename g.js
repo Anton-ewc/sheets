@@ -63,9 +63,9 @@ function runner() {
 	let wday = dnow.getDay(); // Sunday - Saturday : 0 - 6
 	let hour = dnow.getHours();
 	let min = dnow.getMinutes();
-	if(min==15) {
+	if(min==52) {
 		let csheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
-		csheet.getRange("C4").setValue("test");
+		csheet.getRange("C4").setValue("sdfsdfsdf");
 	}
 	if(wday==1 && hour==17 && min==1) checkData();
 }
