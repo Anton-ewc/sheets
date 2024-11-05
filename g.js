@@ -16,7 +16,7 @@ function checkData() {
   //var ui = SpreadsheetApp.getUi();
   let d = new Date();
   const month1 = d.getMonth();
-	const year1 = d.getFullYear();
+  const year1 = d.getFullYear();
   let dt = new Date();
   dt.setMonth(dt.getMonth() - 1);
   const monthAgo = dt.getMonth();
