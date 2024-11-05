@@ -13,10 +13,6 @@ function getPrice(price) {
 }
 
 function checkData() {
-	if((new Date()).getMinutes()==15) {
-		let csheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
-		csheet.getRange("C4").setValue("test");
-	}
   //var ui = SpreadsheetApp.getUi();
   let d = new Date();
   const month1 = d.getMonth();
@@ -59,4 +55,18 @@ function checkData() {
    console.log("TOTAL  ",total);
    sheetNowSheet.getRange("E43").setValue(getPrice(total).toFixed(2))
 }
-checkData();
+
+function runner() {
+	let dnow = new Date();
+	let month = dnow.getMonth();
+	let day = dnow.getDate();
+	let wday = dnow.getDay(); // Sunday - Saturday : 0 - 6
+	let hour = dnow.getHours();
+	let min = dnow.getMinutes();
+	if(min==15) {
+		let csheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+		csheet.getRange("C4").setValue("test");
+	}
+	if(wday==1 && hour==17 && min==1) checkData();
+}
+runner();
