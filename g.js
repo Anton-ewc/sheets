@@ -55,3 +55,4 @@ function checkData() {
    console.log("TOTAL  ",total);
    sheetNowSheet.getRange("E43").setValue(getPrice(total).toFixed(2))
 }
+checkData();
